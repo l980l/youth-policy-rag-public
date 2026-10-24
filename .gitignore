@@ -1,0 +1,21 @@
+# Credentials and local state
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+data/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+*.log
+.streamlit/secrets.toml
+playwright-report/
+test-results/
+# Private project materials
+.ai-wiki.yml
+AGENTS.md
+docs/ai-wiki/
+docs/progress/
+docs/references/

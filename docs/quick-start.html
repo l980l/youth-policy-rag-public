@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>청년의 다음 · API 키 준비 안내</title>
+<style>
+:root{--blue:#243bea;--ink:#111947;--muted:#63708a;--line:#dfe5f3}*{box-sizing:border-box}body{margin:0;background:#f5f7fc;color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}main{max-width:780px;margin:auto;padding:48px 24px}.eyebrow{color:var(--blue);font-size:13px;font-weight:750;letter-spacing:.06em}h1{font-size:clamp(28px,5vw,38px);line-height:1.35;letter-spacing:-.05em;margin:9px 0 14px}.intro{color:var(--muted);margin-bottom:26px}section{margin:16px 0;padding:24px;background:white;border:1px solid var(--line);border-radius:14px}h2{font-size:21px;margin:0 0 12px;letter-spacing:-.04em}.number{color:var(--blue);margin-right:8px}ol{padding-left:23px;margin:10px 0}li{margin:7px 0}a{color:#1a35c7;text-underline-offset:3px}.button{display:inline-block;background:var(--blue);color:white;padding:9px 16px;border-radius:8px;text-decoration:none;font-weight:650;font-size:14px}p{margin:10px 0}code{font: .9em ui-monospace,SFMono-Regular,Consolas,monospace;background:#edf1ff;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}pre{background:var(--ink);color:white;padding:18px;border-radius:10px;overflow:auto}pre code{background:none;padding:0;color:inherit;font-size:13px;line-height:1.9;white-space:pre}.note{font-size:14px;padding:13px 16px;border-left:3px solid var(--blue);background:#edf1ff}.muted,footer{color:var(--muted);font-size:13px}footer{margin-top:24px}a:focus-visible{outline:3px solid #8492ff;outline-offset:3px}@media(max-width:500px){main{padding:28px 16px}section{padding:20px 18px}}@media print{body{background:white}main{padding:0}section{break-inside:avoid}.button{background:none;color:var(--blue);padding:0}}
+</style>
+</head>
+<body>
+<main>
+<div class="eyebrow">청년의 다음 · 개인 실행용</div>
+<h1>본인 API 키 2개만 준비하세요</h1>
+<p class="intro">AI 답변용 키와 정책 자료용 키가 각각 필요합니다.<br>설치와 실행은 받은 코드와 함께 Codex에 맡기면 됩니다.</p>
+
+<section>
+<h2><span class="number">01</span>Gemini API 키</h2>
+<p><strong>용도:</strong> AI 정책 탐색과 질문에 대한 답변 생성</p>
+<a class="button" href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio 열기 ↗</a>
+<ol>
+<li>Google 계정으로 로그인합니다.</li>
+<li>API 키 생성 메뉴에서 본인 프로젝트를 선택하거나 새로 만듭니다.</li>
+<li>발급된 키를 프로젝트의 <code>.env</code> 파일에 있는 <code>LLM_API_KEY=</code> 뒤에 입력합니다.</li>
+</ol>
+<p class="muted">프로젝트 선택·약관 동의 등이 필요할 수 있습니다. 이 코드는 Gemini 설정이므로 다른 제공자의 API 키만 넣어서는 동작하지 않습니다.</p>
+<p class="note">호출 한도와 요금은 본인 계정 기준입니다. 무료 한도도 무제한은 아닙니다. AI Studio에서 사용량과 결제 상태를 확인하세요.</p>
+</section>
+
+<section>
+<h2><span class="number">02</span>온통청년 API 키</h2>
+<p><strong>용도:</strong> 공식 청년정책 자료 조회·수집</p>
+<a class="button" href="https://www.youthcenter.go.kr/cmnFooter/openapiIntro/oaiGuide" target="_blank" rel="noopener noreferrer">온통청년 발급 안내 열기 ↗</a>
+<ol>
+<li>온통청년 홈페이지에 로그인합니다.</li>
+<li><strong>마이페이지 → 오픈(OPEN) API</strong>에서 인증키 발급을 신청합니다.</li>
+<li>승인된 정책 API 키를 <code>.env</code> 파일의 <code>YOUTH_API_KEY=</code> 뒤에 입력합니다.</li>
+</ol>
+<p class="muted">신청만 한 상태라면 조회가 안 될 수 있습니다. 승인 상태도 확인해 주세요.</p>
+</section>
+
+<section>
+<h2>.env에는 이렇게 입력합니다</h2>
+<p>받은 코드의 <code>.env.example</code>을 <code>.env</code>로 복사한 뒤, 두 줄만 본인 키로 채우세요. 기존 <code>.env</code>가 있으면 그 파일을 수정합니다.</p>
+<pre><code>LLM_API_KEY=본인의_Gemini_키
+YOUTH_API_KEY=본인의_온통청년_키</code></pre>
+<p><strong>나머지 설정은 샘플 그대로</strong> 두면 됩니다. <code>GMS_KEY</code>는 비워 둡니다.</p>
+<p class="note">키는 내 컴퓨터의 <code>.env</code>에만 저장하세요. 코드 공유자·채팅방·GitHub에 보내거나 올리지 마세요. 파일 이름은 <code>.env.txt</code>가 아니라 <code>.env</code>입니다.</p>
+</section>
+<footer>
+<p>공식 안내: <a href="https://ai.google.dev/gemini-api/docs/api-key?hl=ko" target="_blank" rel="noopener noreferrer">Gemini API 키</a> · <a href="https://www.youthcenter.go.kr/cmnFooter/openapiIntro/oaiGuide" target="_blank" rel="noopener noreferrer">온통청년 API</a></p>
+<p>이 설명서에는 실제 키가 들어 있지 않습니다. · 2026-10-24</p>
+</footer>
+</main>
+</body>
+</html>

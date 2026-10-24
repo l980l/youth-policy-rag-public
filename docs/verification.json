@@ -1,0 +1,52 @@
+{
+  "checked_at": "2026-10-24T18:31:25.351140+00:00",
+  "unit_tests": {
+    "passed": 52,
+    "seconds": 4.575
+  },
+  "javascript_syntax": "passed",
+  "python_compileall": "passed",
+  "dependency_compatibility": {
+    "checked_packages": 130,
+    "passed": true
+  },
+  "export_checks": {
+    "keys_blank": true,
+    "credential_patterns_found": false,
+    "private_paths_found": false,
+    "education_pdfs_included": false,
+    "personal_wiki_included": false,
+    "policy_dataset_included": false,
+    "screenshots": 3
+  },
+  "source_sha256": {
+    "app.py": "5d6a29861a3fbc1db735b6b2e9d77269f9fe00572b55a14f28adaab7175a548b",
+    "docs/quick-start.html": "656c52a22d6aec8afa59cd30b7f4f56df4d1110cbc03013cda291bb45b7110b6",
+    "tests/test_app.py": "1754ab174c22b444947ce9eba71818f47ae319975bd73cb9b622344aad976ce1",
+    "tests/test_discovery.py": "0a3b26a39a3ec5f0dea5c8fe868ba61104ba58ad0d4f1893618b0adb7249c75f",
+    "tests/test_full_collection.py": "9e5b14c6de59c11b37ba80b739a5b0fd9085e7b74970e372c75e69def14eb4fa",
+    "tests/test_gemini.py": "d582a8d79b61d2a174a346ed387da4b60751c26867f133528ed657c2e4dca959",
+    "tests/test_local_embeddings.py": "e9257ec904e450ea10f5efba73fb2a892895e52ddf79790991a4a117f8eaa23e",
+    "tests/test_pipeline.py": "c66a5c2dcbc5e44a39729c0d37e938f5a83ebff57d6d645aaa42ff6e81c3a3e8",
+    "tests/test_web.py": "35657d4ad26ce74e81ef06960991d8ec739a22a3cfe49113570cf8e38be33cd6",
+    "web/app.js": "f00b00934885cc0433ae6954f1b0c9b6b4bf22724586e2523cf8112c12b80b62",
+    "web/index.html": "f4b047f1c30fce3b831120b0f926ce5d2c42b3be90afc71dff33c431fab1204f",
+    "web/styles.css": "836de58367d289871cb6fe71a421948a9aa03cd864aba95441acabd557fde1fc",
+    "youth_policy/__init__.py": "effac8ec162cfdda76e21208fc5dbb0648586ad4ac1f97658bfc7d46c67f9cde",
+    "youth_policy/cli.py": "4f0bf80e319e9068cfd930ef43752330cb1091261302adf0a3acaa8764255dbd",
+    "youth_policy/collector.py": "504e29de46d9a76252d28190557195bf4d9f8ebb76415134b0f8b4d90eb153c2",
+    "youth_policy/config.py": "f7f2b45d9b8cfd75dc3e47fdf424fd413abc83d40fc562adf8927c03ff7713de",
+    "youth_policy/discover.py": "572bfec48007fbe0bc5558ca9ae1538a6bbccddd388f974c98dda8216e826c3d",
+    "youth_policy/domain.py": "00f3d442b159b9ce5e8f326cb754d9ee5cfc05c5e9342b636c0bb9f10af9f68a",
+    "youth_policy/evaluation.py": "5767087256c10357405b0f04c8752cb50f8526f0259c026f39f62583972e969d",
+    "youth_policy/index.py": "13af6a200847681dde6bf5f4824446f86ae6f63c6ca466501350fda451c709b3",
+    "youth_policy/llm.py": "88833cbb140ec4c5224607cca77d5a1ec538f450b585df51ab6dd00f498de79b",
+    "youth_policy/local_embeddings.py": "b68caeddfdf5b32d18fb353cef7a2607609ad73a5e9744876f9392a375381fca",
+    "youth_policy/prompts.py": "9c57dff28eeff3caaefef245b2b0e13e9a6b2eef08723afaf17abb10387c50ec",
+    "youth_policy/rag.py": "ab88a429edfa0f2bc961037edd27f5e4742e4bc4891ee9cb3fbcfbbb425484a2",
+    "youth_policy/sources.py": "ccb74f644ba63a8a3071a67702a6073b66b38e28d4aa0b19a674ea8008b2d40d",
+    "youth_policy/storage.py": "0dfd72399e1abd61c7e375be964302124e449654de28ae5aee3d353434a4a81d",
+    "youth_policy/ui_validation.py": "f13efdf025796e8874a41a569e207548cc12c29bd990037550aca410d003fe98",
+    "youth_policy/web.py": "044410dcab7dac062c2bea01550c0947dedeac6669695cf5a31cd1fd6ab5ef30"
+  }
+}
