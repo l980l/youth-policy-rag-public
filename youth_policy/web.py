@@ -15,6 +15,7 @@ from urllib.parse import parse_qs, unquote, urlsplit
 from .config import ROOT, load_settings
 from .domain import clean, policy_document
 from .storage import load_policies
+from .usage import HostedQuotaError
 
 
 MAX_BODY_BYTES = 32 * 1024
@@ -303,6 +304,8 @@ def make_handler(service: Any, static_dir: Path):
                 self._error(HTTPStatus.BAD_REQUEST, "invalid_request", str(error))
             except NotFoundError as error:
                 self._error(HTTPStatus.NOT_FOUND, "not_found", str(error))
+            except HostedQuotaError as error:
+                self._error(HTTPStatus.TOO_MANY_REQUESTS, "usage_limit", str(error))
             except (ValueError, RuntimeError):
                 self._error(HTTPStatus.SERVICE_UNAVAILABLE, "service_unavailable", "서비스를 준비하지 못했습니다. 잠시 후 다시 시도해 주세요.")
             except Exception:

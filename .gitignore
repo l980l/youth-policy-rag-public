@@ -19,3 +19,7 @@ AGENTS.md
 docs/ai-wiki/
 docs/progress/
 docs/references/
+
+# Generated deployment assets and local provider state
+runtime_assets/
+.vercel/

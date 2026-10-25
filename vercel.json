@@ -1,0 +1,20 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "python3 -m pip install --target /tmp/youth-build -r requirements.txt && PYTHONPATH=/tmp/youth-build python3 -m youth_policy.prepare_deploy",
+  "outputDirectory": "web",
+  "functions": {
+    "api/index.py": {
+      "maxDuration": 300,
+      "includeFiles": "runtime_assets/**",
+      "excludeFiles": "{tests/**,docs/**,app.py,__pycache__/**}"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/index.py"
+    }
+  ],
+  "fluid": true
+}

@@ -1,0 +1,15 @@
+.git
+.vercel
+.venv
+venv
+.env
+.env.*
+!.env.example
+data
+runtime_assets
+docs
+__pycache__
+**/__pycache__/**
+*.log
+test-results
+playwright-report

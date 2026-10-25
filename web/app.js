@@ -61,6 +61,9 @@
 
   function renderBootstrap(data) {
     state.bootstrap = data;
+    const notice = $('#demo-notice');
+    notice.hidden = !data?.demo;
+    notice.textContent = data?.demo?.message || '';
     const stats = data?.stats || {};
     document.querySelectorAll('[data-stat]').forEach((item) => { item.textContent = number(stats[item.dataset.stat]); });
     const date = stats.collected_at ? `자료 수집 기준: ${clean(stats.collected_at)}` : '';
@@ -159,6 +162,7 @@
 
   async function runDiscovery(query) {
     const results = $('#discovery-results'); const statusTarget = $('#discovery-status');
+    if (state.bootstrap?.demo?.ai_enabled === false) { status(statusTarget, state.bootstrap.demo.message, 'error'); return; }
     const trimmed = query.trim();
     if (!trimmed) { status(statusTarget, '찾고 싶은 상황을 한 문장으로 적어주세요.', 'error'); $('#discovery-query').focus(); return; }
     if (state.discoveryPending) return;
@@ -293,6 +297,7 @@
   }
 
   async function submitChat(question) {
+    if (state.bootstrap?.demo?.ai_enabled === false) { showToast(state.bootstrap.demo.message); return; }
     const selected = state.selected; const trimmed = String(question || '').trim();
     if (!selected?.policy || !trimmed || state.pendingChats.has(selected.id)) return;
     const id = selected.id; const messages = messagesFor(id); const history = messages.filter((message) => message.role === 'user' || message.role === 'assistant').slice(-6).map(({ role, content }) => ({ role, content: String(content).slice(0, 1500) }));
